@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="QLDU_Nhom4_TeamBuilding" target="1.5" />
+      <module name="QLDU_Nhom4_TeamBuilding" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>
