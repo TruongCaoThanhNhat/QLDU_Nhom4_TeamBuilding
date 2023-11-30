@@ -1,0 +1,317 @@
+.frame {
+    width: 1340px;
+    height: 836px;
+    background-color: #4B4454;
+}
+
+.frame.border {
+    border: 17px solid rgb(0, 0, 0);
+    border-radius: 44px;
+}
+
+.containerItem {
+    width: 1330px;
+    height: 155px;
+    background-color: #4B4098;
+}
+
+.containerItem.border {
+    border: 5px solid #E9D9D9;
+    border-radius: 28px;
+}
+
+.item {
+    float: left;
+    margin: 10px;
+    width: 1200px;
+    height: 115px;
+    background-color: #4EDB95;
+}
+
+.border {
+    border: 10px solid #E9D9D9;
+    border-radius: 28px;
+    text-align: center;
+}
+
+.item.border {
+    border: 10px solid #E9D9D9;
+    border-radius: 28px;
+    text-align: center;
+}
+
+
+.b {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 64px;
+    color: white;
+
+}
+
+.containerItemExit {
+    padding: 5px 10px;
+    float: right;
+}
+
+.exit {
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+    position: relative;
+    color: red;
+}
+
+.itemExit {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 4px;
+    background-color: currentColor;
+}
+
+.itemExit.itemExitLe {
+    left: 0;
+    height: 10px;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.itemExit.itemExitRi {
+    right: 0;
+    height: 10px;
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+.containerSetting {
+    margin: 20px;
+    width: 1310px;
+    height: 630px;
+}
+
+.mar-bxh {
+    margin: 100px 5px 0px;
+}
+
+.containerSettingLeft {
+    float: left;
+    margin: 20px;
+    width: 600px;
+    height: 430px;
+}
+
+.containerSettingRight {
+    float: right;
+    margin: 20px;
+    width: 600px;
+    height: 430px;
+}
+
+.containerSettingBottom {
+    float: left;
+    position: relative;
+    width: 1310px;
+    height: 130px;
+}
+
+.format {
+    margin-left: 10px;
+    margin-top: 100px;
+}
+
+.fontID {
+    font-family: monospace;
+    font-size: xx-large;
+    font-style: oblique;
+    font-size: 60px;
+}
+
+.fontSize64 {
+    font-size: 64px;
+}
+
+.formatOK {
+    margin-right: 20px;
+    margin-top: 70px;
+}
+
+.font.borderOK {
+    color: #4B4098;
+    border: 2px solid whitesmoke;
+    background-color: #BDB8E6;
+    text-align: center;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+.containerSettingBottomLe {
+    width: 500px;
+    height: 130px;
+    float: left;
+}
+
+.containerSettingBottomRi {
+    width: 150px;
+    height: 100px;
+    color: aliceblue;
+    float: right;
+}
+
+.font {
+    font-size: 30px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+}
+
+.mar {
+    width: 200px;
+    margin: 40px;
+}
+
+.mar-left {
+    margin-left: 60px;
+}
+
+.dropdown {
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 10%;
+    text-align: center;
+}
+
+.conSeLeft {
+    float: left;
+    width: 250px;
+    margin-left: 50px;
+}
+
+.conSeRight {
+    float: right;
+    width: 150px;
+    margin-right: 100px;
+}
+
+.container {
+    position: relative;
+}
+
+.item-bxh {
+    position: absolute;
+    margin-top: -50px;
+    margin-left: 380px;
+    width: 600px;
+    height: 100px;
+}
+
+.bg-bxh {
+    background-color: #B1AABB;
+}
+
+.bxh {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 32px;
+    color: black;
+}
+
+.divbxh {
+    float: left;
+    margin-left: 50px;
+    height: 50px;
+    width: 1200px;
+}
+
+.top {
+    background-color: yellow;
+}
+
+.fontbxh {
+    font-size: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+}
+
+.mt50 {
+    margin-top: 50px;
+}
+
+.mt20 {
+    margin-top: 20px;
+}
+
+.pdl-bxh200 {
+    padding-left: 200px;
+}
+
+.pdl-bxh20 {
+    padding-left: 20px;
+}
+
+.border-bxh {
+    border: 3px solid #000000;
+    border-radius: 25px;
+}
+
+.posi-abso {
+    position: absolute;
+}
+
+.mar-lef500 {
+    margin-left: 500px;
+}
+
+.wid100 {
+    width: 100px;
+}
+
+.wid180 {
+    width: 180px;
+}
+
+.wid200 {
+    width: 200px;
+}
+
+.hei100 {
+    height: 100px;
+}
+
+.hei110 {
+    height: 110px;
+}
+
+.mar-lef20 {
+    margin-left: 20px;
+}
+
+.mar-top100 {
+    margin-top: 100px;
+}
+
+.cusor {
+    cursor: pointer;
+}
+
+.scroll {
+    overflow: auto;
+    border: 5%;
+}
+
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgb(130, 130, 130);
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 254, 254, 0.827);
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #4B4454;
+}
