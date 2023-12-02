@@ -26,7 +26,7 @@
     <div class="pt-4" style="height: fit-content;"> <img class="w-75 h-75"
                                                          src="/assets/img/waiting-screen/exit.png" alt=""></div>
   </div>
-  <div class="d-flex justify-content-between w-100" style="height: 650px;">
+  <div class="d-flex justify-content-between w-100" style="height: 600px;">
     <div class="bg-concept col-3 p-0" style="border-radius: 20px;">
       <div class="user-item">
         <img class="img-user-item" src="/assets/img/waiting-screen/chiVy.jpg" alt="">
@@ -48,7 +48,7 @@
         <span style="color: #B1ADCF; font-size: 64px; font-weight: 400;"> H2oJ20</span>
         <i style="color: #B1ADCF; font-size: 64px;" class="fa-solid fa-copy"></i>
       </div>
-      <div class="d-flex flex-column pt-5 justify-content-center align-items-center">
+      <div class="d-flex flex-column justify-content-center align-items-center" style="padding-bottom: 32px">
         <div><img src="/assets/img/waiting-screen/clock.png" alt=""></div>
         <span class="text-uppercase"
               style="color:#B1ADCF ; font-size: 60px; font-weight: 700;">waiting...</span>
