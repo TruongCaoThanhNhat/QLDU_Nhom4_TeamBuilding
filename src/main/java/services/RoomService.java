@@ -3,6 +3,7 @@ package services;
 import db.JDBIConnector;
 import models.Room;
 
+
 public class RoomService {
     private static RoomService instance;
 
@@ -23,11 +24,11 @@ public class RoomService {
                 handle.createQuery("select * from room where `key` = ?").bind(0, key)
                         .mapToBean(Room.class)
                         .list().get(0));
-//        result.setHostRoom();
+        result.setHostRoom(UserService.getInstance().getUserById(JDBIConnector.get().withHandle(handle ->
+                handle.createQuery("select id_host_room from room where `key`=?").bind(0, key).mapTo(Integer.class).one())));
         return result;
     }
 
     public static void main(String[] args) {
-        System.out.println(getInstance().getRoomByKey("4ydh2T"));
     }
 }
