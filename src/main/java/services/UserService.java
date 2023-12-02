@@ -26,8 +26,13 @@ public class UserService {
 //        if (users.size() != 1) return null;
 //        return users.get(0);
     }
-
+    public List<User> getUsersInRoom(String roomKey){
+        return RoomService.getInstance().getRoomByKey(roomKey).getUserList();
+    }
+    public User getHost(String roomKey){
+        return RoomService.getInstance().getRoomByKey(roomKey).getHostRoom();
+    }
     public static void main(String[] args) {
-        System.out.println(getInstance().getUserById(1));
+        System.out.println(getInstance().getUsersInRoom("4ydh2T"));
     }
 }
