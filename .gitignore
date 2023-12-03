@@ -1,0 +1,34 @@
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+# Compiled class file
+*.class
+
+# Log files
+*.log
+
+# Compiled files
+target/
+bin/
+out/
+
+# Dependency directories
+lib/
+
+# Maven
+target/
+log/
+.idea_modules/
+
+# Gradle
+build/
+.gradle/
+
+# Eclipse
+.settings/
+bin/
+
+# Javadoc
+/target/site/
