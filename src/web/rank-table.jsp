@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../assets/css/rank-setting.css">
+    <link rel="stylesheet" href="assets/css/rank-setting.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
 
@@ -12,17 +12,17 @@
     <div class="container">
         <div class="item-bxh border bg-bxh">
             <div class="posi-abso">
-                <img src="../assets/img/rank-table/cup1.png" class="wid100 hei100" alt="cup">
+                <img src="assets/img/rank-table/cup1.png" class="wid100 hei100" alt="cup">
             </div>
             <div class="mar-lef500 posi-abso">
-                <img src="../assets/img/rank-table/cup1.png" class="wid100 hei100" alt="cup">
+                <img src="assets/img/rank-table/cup1.png" class="wid100 hei100" alt="cup">
             </div>
             <div class="hei100">
                 <br>
                 <b class="bxh mar-lef20">BẢNG XẾP HẠNG</b>
                 <div>
-                    <img src="../assets/img/rank-table/cup2.png" class="wid180 hei110 posi-abso" alt="cup">
-                    <img src="../assets/img/rank-table/banron.webp" class="wid200 hei110" alt="cup1">
+                    <img src="assets/img/rank-table/cup2.png" class="wid180 hei110 posi-abso" alt="cup">
+                    <img src="assets/img/rank-table/banron.webp" class="wid200 hei110" alt="cup1">
                 </div>
             </div>
 

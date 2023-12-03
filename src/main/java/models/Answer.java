@@ -6,6 +6,19 @@ public class Answer implements Serializable {
     private int id;
     private String answer;
     private boolean correct;
+    private int id_question;
+
+    private Question question;
+
+    public Answer() {
+    }
+
+    public Answer(int id, String answer, boolean correct, int id_question) {
+        this.id = id;
+        this.answer = answer;
+        this.correct = correct;
+        this.id_question = id_question;
+    }
 
     @Override
     public String toString() {
@@ -13,6 +26,8 @@ public class Answer implements Serializable {
                 "id=" + id +
                 ", answer='" + answer + '\'' +
                 ", correct=" + correct +
+                ", id_question=" + id_question +
+                ", question=" + question +
                 '}';
     }
 
@@ -40,12 +55,11 @@ public class Answer implements Serializable {
         this.correct = correct;
     }
 
-    public Answer(int id, String answer, boolean correct) {
-        this.id = id;
-        this.answer = answer;
-        this.correct = correct;
+    public int getId_question() {
+        return id_question;
     }
 
-    public Answer() {
+    public void setId_question(int id_question) {
+        this.id_question = id_question;
     }
 }
