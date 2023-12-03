@@ -7,19 +7,19 @@
 </head>
 
 <body>
-    <div class="frame border">
-        <div class="containerItem border">
-            <div class="item border">
-                <br>
-                <b class="b">PHÒNG</b>
-            </div>
-            <div class="containerItemExit">
-                <span class="exit">
-                    <span class="itemExit itemExitLe"></span>
-                    <span class="itemExit itemExitRi"></span>
-                </span>
-            </div>
-        </div>
+<%--    <div class="frame border">--%>
+<%--        <div class="containerItem border">--%>
+<%--            <div class="item border">--%>
+<%--                <br>--%>
+<%--                <b class="b">PHÒNG</b>--%>
+<%--            </div>--%>
+<%--            <div class="containerItemExit" onclick="close()">--%>
+<%--                <span class="exit">--%>
+<%--                    <span class="itemExit itemExitLe"></span>--%>
+<%--                    <span class="itemExit itemExitRi"></span>--%>
+<%--                </span>--%>
+<%--            </div>--%>
+<%--        </div>--%>
 
         <div class="containerSetting">
             <div>
@@ -58,7 +58,6 @@
                     </div>
                 </div>
                 <div class="containerSettingRight">
-                    <br>
                     <label class="font" for="numbers">Số đội chơi: </label>
                     <select class="mar-left dropdown" id="numbers">
                         <option value=""></option>
@@ -71,7 +70,7 @@
             <div class="containerSettingBottom">
                 <div class="containerSettingBottomLe">
                     <p class="font format">Mã phòng: <span class="fontID">H2OJ20</span> <i
-                            class=" fontSize64 fas fa-copy"></i>
+                            class=" fontSize25 fas fa-copy"></i>
                     </p>
                 </div>
                 <div class="containerSettingBottomRi">
@@ -79,7 +78,7 @@
                 </div>
             </div>
         </div>
-    </div>
+<%--    </div>--%>
 </body>
 
 </html>
