@@ -21,11 +21,11 @@ public class RoomService {
     public Room getRoomByKey(String key) {
         Room result;
         result = JDBIConnector.get().withHandle(handle ->
-                handle.createQuery("select * from room where `key` = ?").bind(0, key)
+                handle.createQuery("select * from room where `KEY` = ?").bind(0, key)
                         .mapToBean(Room.class)
                         .list().get(0));
         result.setHostRoom(UserService.getInstance().getUserById(JDBIConnector.get().withHandle(handle ->
-                handle.createQuery("select id_host_room from room where `key`=?").bind(0, key).mapTo(Integer.class).one())));
+                handle.createQuery("select id_host_room from room where `KEY`=?").bind(0, key).mapTo(Integer.class).one())));
         return result;
     }
 

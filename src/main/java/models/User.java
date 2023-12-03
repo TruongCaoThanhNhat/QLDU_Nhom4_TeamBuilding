@@ -5,13 +5,24 @@ import java.io.Serializable;
 public class User implements Serializable {
     public static int ADMIN = 1;
     public static int USER = 0;
-
     private int id;
     private String userName;
     private String password;
     private int role;
-    private String nameTeam;
+    private String name_team;
     private int status;
+
+    public User() {
+    }
+
+    public User(int id, String userName, String password, int role, String name_team, int status) {
+        this.id = id;
+        this.userName = userName;
+        this.password = password;
+        this.role = role;
+        this.name_team = name_team;
+        this.status = status;
+    }
 
     @Override
     public String toString() {
@@ -20,7 +31,7 @@ public class User implements Serializable {
                 ", userName='" + userName + '\'' +
                 ", password='" + password + '\'' +
                 ", role=" + role +
-                ", nameTeam='" + nameTeam + '\'' +
+                ", name_team='" + name_team + '\'' +
                 ", status=" + status +
                 '}';
     }
@@ -57,12 +68,12 @@ public class User implements Serializable {
         this.role = role;
     }
 
-    public String getNameTeam() {
-        return nameTeam;
+    public String getName_team() {
+        return name_team;
     }
 
-    public void setNameTeam(String nameTeam) {
-        this.nameTeam = nameTeam;
+    public void setName_team(String name_team) {
+        this.name_team = name_team;
     }
 
     public int getStatus() {
@@ -71,17 +82,5 @@ public class User implements Serializable {
 
     public void setStatus(int status) {
         this.status = status;
-    }
-
-    public User(int id, String userName, String password, int role, String nameTeam, int status) {
-        this.id = id;
-        this.userName = userName;
-        this.password = password;
-        this.role = role;
-        this.nameTeam = nameTeam;
-        this.status = status;
-    }
-
-    public User() {
     }
 }
