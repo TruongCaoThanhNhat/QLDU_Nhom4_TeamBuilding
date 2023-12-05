@@ -11,7 +11,8 @@ public class Room implements Serializable {
     private User hostRoom;
     private List<BoardGame> boardGameList;
     private List<User> userList;
-
+    public static final int ROOM_STATUS_UNLOCK = 1;
+    public static final int ROOM_STATUS_LOCK = 2;
     public Room() {
     }
 

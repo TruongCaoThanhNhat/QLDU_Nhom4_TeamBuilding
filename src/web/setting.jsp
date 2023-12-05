@@ -20,64 +20,65 @@
 <%--                </span>--%>
 <%--            </div>--%>
 <%--        </div>--%>
-
-        <div class="containerSetting">
-            <div>
-                <div class="containerSettingLeft">
-                    <p class="font">Câu hỏi: </p>
-                    <div class="conSeLeft">
-                        <p class="font">Dễ</p>
-                        <p class="font">Trung bình</p>
-                        <p class="font">Khó</p>
+<%--        <form method="post" action="<%=request.getContextPath()%>/room">--%>
+            <div class="containerSetting">
+                <div>
+                    <div class="containerSettingLeft">
+                        <p class="font">Câu hỏi: </p>
+                        <div class="conSeLeft">
+                            <p class="font">Dễ</p>
+                            <p class="font">Trung bình</p>
+                            <p class="font">Khó</p>
+                        </div>
+                        <div class="conSeRight">
+                            <p>
+                                <select class="mar-left dropdown" id="numbers">
+                                    <option value=""></option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </p>
+                            <p>
+                                <select class="mar-left dropdown" id="numbers">
+                                    <option value=""></option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </p>
+                            <p>
+                                <select class="mar-left dropdown" id="numbers">
+                                    <option value=""></option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </p>
+                        </div>
                     </div>
-                    <div class="conSeRight">
-                        <p>
-                            <select class="mar-left dropdown" id="numbers">
-                                <option value=""></option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                            </select>
-                        </p>
-                        <p>
-                            <select class="mar-left dropdown" id="numbers">
-                                <option value=""></option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                            </select>
-                        </p>
-                        <p>
-                            <select class="mar-left dropdown" id="numbers">
-                                <option value=""></option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                            </select>
-                        </p>
+                    <div class="containerSettingRight">
+                        <label class="font" for="numbers">Số đội chơi: </label>
+                        <select class="mar-left dropdown" name="quantity">
+                            <option value=""></option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
                     </div>
                 </div>
-                <div class="containerSettingRight">
-                    <label class="font" for="numbers">Số đội chơi: </label>
-                    <select class="mar-left dropdown" id="numbers">
-                        <option value=""></option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                    </select>
+                <div class="containerSettingBottom">
+                    <div class="containerSettingBottomLe">
+                        <p class="font format">Mã phòng: <span class="fontID" name="key_room"></span> <i
+                                class=" fontSize25 fas fa-copy"></i>
+                        </p>
+                    </div>
+                    <div class="containerSettingBottomRi">
+                        <a href="<%=request.getContextPath()%>/room" class="font formatOK borderOK">OK</a>
+                    </div>
                 </div>
             </div>
-            <div class="containerSettingBottom">
-                <div class="containerSettingBottomLe">
-                    <p class="font format">Mã phòng: <span class="fontID">H2OJ20</span> <i
-                            class=" fontSize25 fas fa-copy"></i>
-                    </p>
-                </div>
-                <div class="containerSettingBottomRi">
-                    <p class="font formatOK borderOK">OK</p>
-                </div>
-            </div>
-        </div>
+<%--        </form>--%>
 <%--    </div>--%>
 </body>
 
