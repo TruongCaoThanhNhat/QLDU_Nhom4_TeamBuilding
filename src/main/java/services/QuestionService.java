@@ -4,10 +4,15 @@ import db.JDBIConnector;
 import models.Answer;
 import models.Level;
 import models.Question;
+import org.jdbi.v3.core.argument.Argument;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import static org.jdbi.v3.core.internal.IterableLike.toList;
 
 public class QuestionService {
     private static QuestionService instance;
@@ -56,7 +61,29 @@ public class QuestionService {
         return result;
     }
 
+    public List<Question> randomQuestionLevel(String key_room, int level, String quantity) {
+        List<Question> listQuestion = JDBIConnector.get()
+                .withHandle(handle -> handle
+                        .createQuery("SELECT * FROM question where id_level = ? ORDER BY RAND() LIMIT " + quantity + ";")
+                        .bind(0, level)
+                        .mapToBean(Question.class).list());
+        String query = "INSERT INTO `team_answer` (`id_board_game_score`,`id_question`,`is_correct`) VALUES (?, ?, ?)";
+//        String query = "INSERT INTO `team_answer` VALUES (:id_board_game_score,:id_question,:is_correct)";
+//        Stream<Question> personStream = listQuestion.stream();
+//        JDBIConnector.get().withHandle(handle -> handle.createUpdate(query).bind("id_board_game_score", BoardGameService.getInstance().getIdBoardGameScore(key_room))
+//                .bindList("id_question",personStream.map(p -> p.getId()).collect(Collectors.toList())).bind("is_correct", (Integer) null).execute());
+        int idBoardGameScore = BoardGameService.getInstance().getIdBoardGameScore(key_room);
+        for (Question question : listQuestion) {
+            JDBIConnector.get().withHandle(handle -> handle.createUpdate(query)
+                    .bind(0, idBoardGameScore)
+                    .bind(1, question.getId())
+                    .bind(2, (Integer) null)
+                    .execute());
+        }
+        return listQuestion;
+    }
+
     public static void main(String[] args) {
-        System.out.println(getInstance().randomQuestionsByLevel(5, 1));
+        System.out.println(getInstance().randomQuestionLevel("eAuBux0Q0x", 1, "5"));
     }
 }

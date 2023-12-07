@@ -20,7 +20,7 @@
 <%--                </span>--%>
 <%--            </div>--%>
 <%--        </div>--%>
-<%--        <form method="post" action="<%=request.getContextPath()%>/room">--%>
+        <form method="post" action="<%=request.getContextPath()%>/room?action=create_room">
             <div class="containerSetting">
                 <div>
                     <div class="containerSettingLeft">
@@ -32,39 +32,40 @@
                         </div>
                         <div class="conSeRight">
                             <p>
-                                <select class="mar-left dropdown" id="numbers">
+                                <select class="mar-left dropdown" name="de">
                                     <option value=""></option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
+                                    <option value="5">5</option>
+                                    <option value="10">10</option>
+                                    <option value="15">15</option>
                                 </select>
                             </p>
                             <p>
-                                <select class="mar-left dropdown" id="numbers">
+                                <select class="mar-left dropdown" name="trungbinh">
                                     <option value=""></option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
+                                    <option value="5">5</option>
+                                    <option value="10">10</option>
+                                    <option value="15">15</option>
                                 </select>
                             </p>
                             <p>
-                                <select class="mar-left dropdown" id="numbers">
+                                <select class="mar-left dropdown" name="kho">
                                     <option value=""></option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
+                                    <option value="5">5</option>
+                                    <option value="10">10</option>
+                                    <option value="15">15</option>
                                 </select>
                             </p>
                         </div>
                     </div>
                     <div class="containerSettingRight">
-                        <label class="font" for="numbers">Số đội chơi: </label>
-                        <select class="mar-left dropdown" name="quantity">
-                            <option value=""></option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                        </select>
+                        <label class="font">Số đội chơi: </label>
+                        <input type="number" name="quantity" class="mar-left dropdown">
+<%--                        <select class="mar-left dropdown" >--%>
+<%--                            <option value=""></option>--%>
+<%--                            <option value="1">1</option>--%>
+<%--                            <option value="2">2</option>--%>
+<%--                            <option value="3">3</option>--%>
+<%--                        </select>--%>
                     </div>
                 </div>
                 <div class="containerSettingBottom">
@@ -74,11 +75,11 @@
                         </p>
                     </div>
                     <div class="containerSettingBottomRi">
-                        <a href="<%=request.getContextPath()%>/room" class="font formatOK borderOK">OK</a>
+                        <button class="font formatOK borderOK">OK</button>
                     </div>
                 </div>
             </div>
-<%--        </form>--%>
+        </form>
 <%--    </div>--%>
 </body>
 

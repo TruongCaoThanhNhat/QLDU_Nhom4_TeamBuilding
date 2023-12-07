@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class TeamAnswer implements Serializable {
     private int id;
-    private int id_board_game;
+    private int id_board_game_score;
     private int id_question;
     private int id_team;
     private boolean is_correct;
@@ -15,9 +15,9 @@ public class TeamAnswer implements Serializable {
     public TeamAnswer() {
     }
 
-    public TeamAnswer(int id, int id_board_game, int id_question, int id_team, boolean is_correct) {
+    public TeamAnswer(int id, int id_board_game_score, int id_question, int id_team, boolean is_correct) {
         this.id = id;
-        this.id_board_game = id_board_game;
+        this.id_board_game_score = id_board_game_score;
         this.id_question = id_question;
         this.id_team = id_team;
         this.is_correct = is_correct;
@@ -27,7 +27,7 @@ public class TeamAnswer implements Serializable {
     public String toString() {
         return "TeamAnswer{" +
                 "id=" + id +
-                ", id_board_game=" + id_board_game +
+                ", id_board_game_score=" + id_board_game_score +
                 ", id_question=" + id_question +
                 ", id_team=" + id_team +
                 ", is_correct=" + is_correct +
@@ -45,12 +45,12 @@ public class TeamAnswer implements Serializable {
         this.id = id;
     }
 
-    public int getId_board_game() {
-        return id_board_game;
+    public int getId_board_game_score() {
+        return id_board_game_score;
     }
 
-    public void setId_board_game(int id_board_game) {
-        this.id_board_game = id_board_game;
+    public void setId_board_game_score(int id_board_game_score) {
+        this.id_board_game_score = id_board_game_score;
     }
 
     public int getId_question() {

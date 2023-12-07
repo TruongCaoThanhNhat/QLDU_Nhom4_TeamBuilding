@@ -59,13 +59,15 @@
           </div>
         </div>
         <div class="bg-concept col-8" style="border-radius: 20px;">
-          <div class="d-flex justify-content-center align-items-center id-room pt-4">
+          <form method="post" action="<%=request.getContextPath()%>/room?action=start_game">
+            <div class="d-flex justify-content-center align-items-center id-room pt-4">
             <span
-              style="color: white;font-size: 40px; font-weight: 700; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Mã
+                    style="color: white;font-size: 40px; font-weight: 700; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Mã
               phòng:</span>
-            <span style="color: #B1ADCF; font-size: 64px; font-weight: 400;"> H2oJ20</span>
-            <i style="color: #B1ADCF; font-size: 64px;" class="fa-solid fa-copy"></i>
-          </div>
+              <span style="color: #B1ADCF; font-size: 64px; font-weight: 400;" name="key_room" >H2oJ20</span>
+              <i style="color: #B1ADCF; font-size: 64px;" class="fa-solid fa-copy"></i>
+            </div>
+
           <div class="d-flex flex-column  justify-content-center align-items-center">
             <div><img src="/assets/img/waiting-screen/clock.png" alt=""></div>
             <button
@@ -74,6 +76,7 @@
               <span style="font-size: 40px; font-weight: 700;">START</span>
             </button>
           </div>
+          </form>
         </div>
       </div>
     </div>

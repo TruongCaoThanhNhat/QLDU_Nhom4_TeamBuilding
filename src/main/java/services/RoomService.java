@@ -1,6 +1,7 @@
 package services;
 
 import db.JDBIConnector;
+import models.BoardGame;
 import models.Room;
 
 import java.util.Random;
@@ -53,14 +54,22 @@ public class RoomService {
         return randomString.toString();
     }
 
-    public boolean createGame(String id_host_room, String quantity) {
+    public boolean createGame(String id_host_room, String quantity, String quantity_de, String quantity_tb, String quantity_kho) {
         String keyRoom = createKeyRoom();
         if (createRoom(id_host_room, quantity, keyRoom))
-            if (createBoardGame(keyRoom, id_host_room))
-                return true;
+            if (BoardGameService.getInstance().createBoardGame(keyRoom, quantity_de, quantity_tb, quantity_kho))
+                if (addTeam(id_host_room, keyRoom))
+                    return true;
         return false;
     }
 
+    public boolean addTeam(String id_team, String key_room) {
+        int rs;
+        String query = "INSERT INTO `score` (`id_board_game`,`id_team`,`playing_time`, `correct_answer`) VALUES (?,?,?,?)";
+        rs = JDBIConnector.get().withHandle(handle -> handle.createUpdate(query).bind(0, BoardGameService.getInstance().getIdBoardGame(key_room))
+                .bind(1, id_team).bind(2, (String) null).bind(3, (Integer) null).execute());
+        return rs != 0;
+    }
     public boolean createRoom(String id_host_room, String quantity, String keyRoom) {
         int rs;
         String query = "INSERT INTO `room` (`KEY`,`id_host_room`,`quantity`, `status`) VALUES (?,?,?,?)";
@@ -69,22 +78,7 @@ public class RoomService {
         return rs != 0;
     }
 
-    public boolean createBoardGame(String key_room, String id_team) {
-        int rs;
-        String query = "INSERT INTO `board_game` (`key_room`,`id_team`,`playing_time`, `correct_answer`) VALUES (?,?,?,?)";
-        rs = JDBIConnector.get().withHandle(handle -> handle.createUpdate(query).bind(0, key_room)
-                .bind(1, id_team).bind(2, "").bind(3, 0).execute());
-        return rs != 0;
-    }
-
-    public boolean updateBoardGame(String key_room, String id_team, String playing_time, int correct_answer) {
-        int rs;
-        String query = "UPDATE `room` SET playing_time = ? and correct_answer = ? WHERE key_room = ? and id_team = ?  ";
-        rs = JDBIConnector.get().withHandle(handle -> handle.createUpdate(query).bind(0, playing_time)
-                .bind(1, correct_answer).bind(2, key_room).bind(3, id_team).execute());
-        return rs != 0;
-    }
-
     public static void main(String[] args) {
+        System.out.println(RoomService.getInstance().addTeam("1","PM5rhBhIcT"));
     }
 }
