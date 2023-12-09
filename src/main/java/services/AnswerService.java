@@ -24,6 +24,6 @@ public class AnswerService {
     }
 
     public static void main(String[] args) {
-        System.out.println(getInstance().getAnswerListOfQuestion(2));
+        System.out.println(getInstance().getAnswerListOfQuestion(5));
     }
 }

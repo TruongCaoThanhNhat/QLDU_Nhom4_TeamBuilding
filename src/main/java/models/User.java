@@ -3,8 +3,8 @@ package models;
 import java.io.Serializable;
 
 public class User implements Serializable {
-    public static int ADMIN = 1;
-    public static int USER = 0;
+    public static final int ADMIN = 1;
+    public static final int USER = 0;
     private int id;
     private String userName;
     private String password;
