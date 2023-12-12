@@ -4,6 +4,9 @@ import java.io.Serializable;
 import java.util.List;
 
 public class Room implements Serializable {
+    public static int ACTIVE = 1;       // Phòng chơi đang hoạt động
+    public static int PLAYED = 2;       // Phòng chơi đã chơi
+    public static int NOT_STARTED = 0;      // Phòng chơi chưa bắt đầu
     private String key;
     private int id_host_room;
     private int quantity;
