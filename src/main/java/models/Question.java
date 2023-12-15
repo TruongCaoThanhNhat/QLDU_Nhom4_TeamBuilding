@@ -16,6 +16,8 @@ public class Question implements Serializable {
                 "id=" + id +
                 ", question='" + question + '\'' +
                 ", id_level=" + id_level +
+                ", level=" + level +
+                ", answerList=" + answerList +
                 '}';
     }
 

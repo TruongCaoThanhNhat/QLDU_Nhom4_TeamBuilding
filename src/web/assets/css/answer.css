@@ -9,3 +9,13 @@
     border: none;
     border-radius: 20px;
 }
+
+.bg-red {
+    background: #E82424;
+}
+.bg-green {
+    background-color: #4AE45A;
+}
+.d-none{
+    display: none !important;
+}
