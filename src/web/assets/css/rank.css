@@ -1,9 +1,9 @@
 .frame {
-    width: 850px;
-    height: 450px;
+    width: auto;
+    height: 90%;
     background-color: #4B4454;
     position: fixed;
-    top: 50%;
+    top: 52%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
@@ -11,7 +11,6 @@
 
 .frame.border {
     border: 17px solid rgb(0, 0, 0);
-    border-radius: 44px;
 }
 
 .containerItem {
@@ -87,9 +86,7 @@
 }
 
 .containerSetting {
-    margin: 20px;
-    width: 800px;
-    height: 300px;
+    height: 80%;
 }
 
 .mar-bxh {
@@ -205,7 +202,7 @@
 .item-bxh {
     position: absolute;
     margin-top: -50px;
-    margin-left: 380px;
+    margin-left: 303px;
     width: 600px;
     height: 100px;
 }
@@ -228,7 +225,7 @@
 }
 
 .top {
-    background-color: yellow;
+    background-image: linear-gradient(to right, red 8px, #f1ff6d 4px);
 }
 
 .fontbxh {
@@ -236,11 +233,18 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
 }
-
+table, th, td {
+    text-align: center;
+    font-size: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+}
 .mt50 {
     margin-top: 50px;
 }
-
+.ml30 {
+    margin-left: 30px;
+}
 .mt20 {
     margin-top: 20px;
 }

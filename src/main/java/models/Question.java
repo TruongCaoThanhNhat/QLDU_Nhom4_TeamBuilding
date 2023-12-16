@@ -6,6 +6,7 @@ import java.util.List;
 public class Question implements Serializable {
     private int id;
     private String question;
+    private int id_level;
     private Level level;
     private List<Answer> answerList;
 
@@ -14,9 +15,18 @@ public class Question implements Serializable {
         return "Question{" +
                 "id=" + id +
                 ", question='" + question + '\'' +
+                ", id_level=" + id_level +
                 ", level=" + level +
                 ", answerList=" + answerList +
                 '}';
+    }
+
+    public int getId_level() {
+        return id_level;
+    }
+
+    public void setId_level(int id_level) {
+        this.id_level = id_level;
     }
 
     public int getId() {
@@ -51,13 +61,11 @@ public class Question implements Serializable {
         this.answerList = answerList;
     }
 
-    public Question(int id, String question, Level level, List<Answer> answerList) {
+    public Question(int id, String question, int id_level) {
         this.id = id;
         this.question = question;
-        this.level = level;
-        this.answerList = answerList;
+        this.id_level = id_level;
     }
-
     public Question() {
     }
 }

@@ -6,6 +6,9 @@ public class Level implements Serializable {
     private int id;
     private String name;
     private int time;
+    public static final int LEVEL_DE = 1;
+    public static final int LEVEL_TRUNG_BINH = 2;
+    public static final int LEVEL_KHO = 3;
 
     public Level(int id, String name, int time) {
         this.id = id;
