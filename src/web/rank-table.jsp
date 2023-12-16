@@ -65,60 +65,57 @@
                     <th>TIME</th>
                 </tr>
                 <% int count = 1;
-                    for (Score score : scoreList) {
-                        score.setTeam(UserService.getInstance().getUserById(score.getId_team()));
-                %>
+                    for (int i = 0; i < scoreList.size(); i++) {
+                        scoreList.get(i).setTeam(UserService.getInstance().getUserById(scoreList.get(i).getId_team()));
+                        if (i == 0) {%>
                 <tr class="top" style="border-spacing: 20px">
+                        <%}else{%>
+                <tr style="border-spacing: 20px">
+                    <%}%>
                     <td><%=count%>
                     </td>
-                    <td><%=score.getTeam().getName_team()%>
+                    <td><%=scoreList.get(i).getTeam().getName_team()%>
                     </td>
-                    <td><%=score.getCorrect_answer()%>/15
+                    <td><%=scoreList.get(i).getCorrect_answer()%>/15
                         <%--                    <%=score.getQuestionList().size()%>--%>
                     </td>
-                    <td><%=score.getPlaying_time()%>
+                    <td><%=scoreList.get(i).getPlaying_time()%>
                     </td>
                 </tr>
                 <% count++;
                 }%>
-                <tr class="mt20">
-                    <td>2</td>
-                    <td>Lá Vàng</td>
-                    <td>15/15</td>
-                    <td>120s</td>
-                </tr>
             </table>
-<%--            <table>--%>
-<%--                <tr class="mt20">--%>
-<%--                    <th class="pdl-bxh20 mt50 fontbxh"> NO</th>--%>
-<%--                    <th class="pdl-bxh200 mt50 fontbxh"> TEAM</th>--%>
-<%--                    <th class="pdl-bxh200 mt50 fontbxh"> ANSWER</th>--%>
-<%--                    <th class="pdl-bxh200 mt50 fontbxh"> TIME</th>--%>
-<%--                </tr>--%>
-<%--                <% int count = 1;--%>
-<%--                    for (Score score : scoreList) {--%>
-<%--                        score.setTeam(UserService.getInstance().getUserById(score.getId_team()));--%>
-<%--                %>--%>
-<%--                <tr class="divbxh mt20 ml30 border-bxh top">--%>
-<%--                    <td class="mt20 fontbxh"><%=count%>--%>
-<%--                    </td>--%>
-<%--                    <td class="pdl-bxh200 mt20 fontbxh"><%=score.getTeam().getName_team()%>--%>
-<%--                    </td>--%>
-<%--                    <td class="pdl-bxh200 mt20 fontbxh"><%=score.getCorrect_answer()%>/15--%>
-<%--                        &lt;%&ndash;                    <%=score.getQuestionList().size()%>&ndash;%&gt;--%>
-<%--                    </td>--%>
-<%--                    <td class="pdl-bxh200 mt20 fontbxh"><%=score.getPlaying_time()%>--%>
-<%--                    </td>--%>
-<%--                </tr>--%>
-<%--                <% count++;--%>
-<%--                }%>--%>
-<%--                <tr class="divbxh mt20 border-bxh">--%>
-<%--                    <td class="mt20 fontbxh">2</td>--%>
-<%--                    <td class="pdl-bxh200 mt20 fontbxh">Lá Vàng</td>--%>
-<%--                    <td class="pdl-bxh200 mt20 fontbxh">15/15</td>--%>
-<%--                    <td class="pdl-bxh200 mt20 fontbxh">120s</td>--%>
-<%--                </tr>--%>
-<%--            </table>--%>
+            <%--            <table>--%>
+            <%--                <tr class="mt20">--%>
+            <%--                    <th class="pdl-bxh20 mt50 fontbxh"> NO</th>--%>
+            <%--                    <th class="pdl-bxh200 mt50 fontbxh"> TEAM</th>--%>
+            <%--                    <th class="pdl-bxh200 mt50 fontbxh"> ANSWER</th>--%>
+            <%--                    <th class="pdl-bxh200 mt50 fontbxh"> TIME</th>--%>
+            <%--                </tr>--%>
+            <%--                <% int count = 1;--%>
+            <%--                    for (Score score : scoreList) {--%>
+            <%--                        score.setTeam(UserService.getInstance().getUserById(score.getId_team()));--%>
+            <%--                %>--%>
+            <%--                <tr class="divbxh mt20 ml30 border-bxh top">--%>
+            <%--                    <td class="mt20 fontbxh"><%=count%>--%>
+            <%--                    </td>--%>
+            <%--                    <td class="pdl-bxh200 mt20 fontbxh"><%=score.getTeam().getName_team()%>--%>
+            <%--                    </td>--%>
+            <%--                    <td class="pdl-bxh200 mt20 fontbxh"><%=score.getCorrect_answer()%>/15--%>
+            <%--                        &lt;%&ndash;                    <%=score.getQuestionList().size()%>&ndash;%&gt;--%>
+            <%--                    </td>--%>
+            <%--                    <td class="pdl-bxh200 mt20 fontbxh"><%=score.getPlaying_time()%>--%>
+            <%--                    </td>--%>
+            <%--                </tr>--%>
+            <%--                <% count++;--%>
+            <%--                }%>--%>
+            <%--                <tr class="divbxh mt20 border-bxh">--%>
+            <%--                    <td class="mt20 fontbxh">2</td>--%>
+            <%--                    <td class="pdl-bxh200 mt20 fontbxh">Lá Vàng</td>--%>
+            <%--                    <td class="pdl-bxh200 mt20 fontbxh">15/15</td>--%>
+            <%--                    <td class="pdl-bxh200 mt20 fontbxh">120s</td>--%>
+            <%--                </tr>--%>
+            <%--            </table>--%>
         </div>
     </div>
 </div>
