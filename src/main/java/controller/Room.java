@@ -18,12 +18,15 @@ import java.util.List;
 @WebServlet("/room")
 public class Room extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+ protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String id_host_room = "1";
+        String key_room = "eAuBux0Q0x";
+//      String key_room = req.getParameter("key_room").toString(); // session
+
         String quantity = req.getParameter("quantity");
-//        String quantity_de = req.getAttribute("quantity_de").toString();
-//        String quantity_tb = req.getAttribute("quantity_tb").toString();
-//        String quantity_kho = req.getAttribute("quantity_kho").toString();
+//        String quantity_de = req.getParameter("quantity_de").toString();
+//        String quantity_tb = req.getParameter("quantity_tb").toString();
+//        String quantity_kho = req.getParameter("quantity_kho").toString();
         String quantity_de = "5";
         String quantity_tb = "5";
         String quantity_kho = "5";
@@ -35,8 +38,6 @@ public class Room extends HttpServlet {
                 }
                 break;
             case "start_game":
-//                String key_room = req.getParameter("key_room").toString();
-                String key_room = "eAuBux0Q0x";
                 List<Question> list = new ArrayList<>();
                 list.addAll(QuestionService.getInstance().randomQuestionLevel(key_room, Level.LEVEL_DE, quantity_de));
                 list.addAll(QuestionService.getInstance().randomQuestionLevel(key_room, Level.LEVEL_TRUNG_BINH, quantity_tb));
@@ -46,8 +47,12 @@ public class Room extends HttpServlet {
                 if (list.size() > 0)
                     resp.sendRedirect("/answer.jsp");
                 break;
+            case "bxh":
+                List<Score> scoreList = ScoreService.getInstance().getBXH(key_room);
+                req.setAttribute("scoreList", scoreList);
+                req.getRequestDispatcher("/rank-table.jsp").forward(req,resp);
+                break;
         }
-
     }
 
     @Override
