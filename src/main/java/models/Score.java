@@ -43,7 +43,13 @@ public class Score implements Serializable {
                 ", questionList=" + questionList +
                 '}';
     }
+public User getTeam() {
+        return team;
+    }
 
+    public void setTeam(User team) {
+        this.team = team;
+    }
     public int getId() {
         return id;
     }

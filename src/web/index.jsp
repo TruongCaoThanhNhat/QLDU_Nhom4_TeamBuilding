@@ -15,7 +15,7 @@
 <main>
     <div class="main-warpper">
         <div class="main-content">
-            <div class="logo">
+            <div class="logo" style="margin-left: 150px">
                 <img src="/assets/img/logo.png" alt=""/>
             </div>
             <div class="avatar">
@@ -29,7 +29,6 @@
                 <form action="" class="mx-auto">
                     <div class="mx-auto">
                         <!-- <label for="" class="d-inline-block">Biệt danh</label> -->
-
                         <div class="form-name__input">
                             <input type="text" placeholder="Quyết thắng"/>
                             <span class="form-name__edit">
@@ -95,7 +94,6 @@
     btn.onclick = function () {
         modal.style.display = "block";
     }
-
     window.onclick = function (event) {
         if (event.target == modal) {
             modal.style.display = "none";
