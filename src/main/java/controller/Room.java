@@ -5,6 +5,7 @@ import models.Question;
 import models.Score;
 import services.QuestionService;
 import services.RoomService;
+import services.ScoreService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,18 +19,18 @@ import java.util.List;
 @WebServlet("/room")
 public class Room extends HttpServlet {
     @Override
- protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String id_host_room = "1";
         String key_room = "eAuBux0Q0x";
 //      String key_room = req.getParameter("key_room").toString(); // session
 
         String quantity = req.getParameter("quantity");
-//        String quantity_de = req.getParameter("quantity_de").toString();
-//        String quantity_tb = req.getParameter("quantity_tb").toString();
-//        String quantity_kho = req.getParameter("quantity_kho").toString();
-        String quantity_de = "5";
-        String quantity_tb = "5";
-        String quantity_kho = "5";
+        String quantity_de = req.getParameter("quantity_de");
+        String quantity_tb = req.getParameter("quantity_tb");
+        String quantity_kho = req.getParameter("quantity_kho");
+//        String quantity_de = "5";
+//        String quantity_tb = "5";
+//        String quantity_kho = "5";
         String action = req.getParameter("action");
         switch (action) {
             case "create_room":
@@ -50,13 +51,13 @@ public class Room extends HttpServlet {
             case "bxh":
                 List<Score> scoreList = ScoreService.getInstance().getBXH(key_room);
                 req.setAttribute("scoreList", scoreList);
-                req.getRequestDispatcher("/rank-table.jsp").forward(req,resp);
+                req.getRequestDispatcher("/rank-table.jsp").forward(req, resp);
                 break;
         }
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        doGet(req,resp);
+        doGet(req, resp);
     }
 }

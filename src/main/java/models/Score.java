@@ -13,7 +13,7 @@ public class Score implements Serializable {
     private int correct_answer;
     public static List<Question> questionList = null;
     private static Score instance;
-
+    User team;
     public Score() {
     }
 
