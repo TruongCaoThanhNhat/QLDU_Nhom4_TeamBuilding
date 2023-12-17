@@ -1,12 +1,51 @@
 indexQuestion = 0;
 isClicked = false;
-const totalTime = document.getElementById("total-time");
+countCorrect = 0
+totalTime = document.getElementById("total-time");
 time = 0;
 setInterval(() => {
     totalTime.innerText = time++
 }, 1000);
 
+timeDownElement = document.getElementById('time-down');
+// function timeDown(durationInSeconds) {
+//     initialWidth = 100; // Độ rộng ban đầu, có thể thay đổi tùy ý
+//     countdownInterval = setInterval(function () {
+//         initialWidth -= (100 / durationInSeconds);
+//         timeDownElement.style.width = initialWidth + '%';
+//         if (initialWidth <= 0) {
+//             clearInterval(timeDown);
+//         }
+//     }, 1000);
+// }
+var countdownInterval
+
+function startCountdownWithDelay(durationInSeconds) {
+    countdownElement = document.getElementById('time-down');
+    initialWidth = 100;
+
+    // Delay trước khi bắt đầu đếm ngược
+    setTimeout(function () {
+        countdownInterval = setInterval(function () {
+            initialWidth -= (100 / durationInSeconds);
+            countdownElement.style.width = initialWidth + '%';
+            if (initialWidth <= 0) {
+                clearInterval(countdownInterval);
+            }
+        }, 1000); // Cập nhật mỗi giây
+    }, 1000); // Chuyển đổi giây thành milliseconds
+}
+
+// startCountdownWithDelay(20)
+
+function stopCountdown(countdownInterval) {
+
+    clearInterval(countdownInterval);
+}
+
 function checkAnswer(button) {
+    // stopCountdown(countdownInterval)
+    // startCountdownWithDelay(60, 5);
     if (!isClicked) {
         isClicked = true;
         if (button.classList.contains("true")) {
@@ -15,6 +54,7 @@ function checkAnswer(button) {
                 document.getElementsByClassName("congratulation")[0].classList.remove("d-none");
                 document.getElementsByClassName("button-continue")[0].classList.remove("d-none");
             }, 300);
+            countCorrect++
         } else {
             button.classList.add("bg-red");
             setTimeout(() => {
@@ -25,13 +65,25 @@ function checkAnswer(button) {
     }
 }
 
-function nextQuestion() {
+
+
+key = document.getElementById("key").innerText
+console.log(key)
+
+
+function clickNext() {
+    // startCountdownWithDelay(20)
+    // resetCountdown()
+    total = totalTime.innerText
     indexQuestion++;
     $.ajax({
         url: "/NextQuestion",
         type: "get", //send it through get method
         data: {
-            indexQuestion: indexQuestion
+            indexQuestion: indexQuestion,
+            countCorrect: countCorrect,
+            key: key,
+            totalTime: total
         },
         success: function (response) {
             console.log(response.answer1)

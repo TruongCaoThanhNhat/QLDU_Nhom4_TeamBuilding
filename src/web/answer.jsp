@@ -25,7 +25,8 @@
         <div class="pl-5" style="height: fit-content;"><img class="w-75 h-75" src="/assets/img/logo.png" alt="">
         </div>
         <div class="d-flex id-room ">
-            <span style="color: #B1ADCF; font-size: 64px; font-weight: 400; line-height: normal;"> H2oJ20</span>
+            <% String key = request.getAttribute("key").toString();%>
+            <span id="key" style="color: #B1ADCF; font-size: 64px; font-weight: 400; line-height: normal;"><%=key%></span>
             <i style="color: #B1ADCF; font-size: 64px;" class="fa-solid fa-copy"></i>
         </div>
         <div class="pt-4" style="height: fit-content;"><img class="w-75 h-75" src="/assets/img/waiting-screen/exit.png"
@@ -113,12 +114,12 @@
                 </div>
 
                 <div class="bg-white w-100 mt-4" style="height: 12px; border-radius: 20px;">
-                    <div class="time-down h-100" style="background-color: #8854C0; border-radius: 10px; width: 100%"></div>
+                    <div id="time-down" class=" h-100" style="background-color: #8854C0; border-radius: 10px;"></div>
                 </div>
 
                 <div class="d-flex flex-column justify-content-between align-items-center"
                      style="margin-top: 32px; gap:32px; padding-bottom: 32px">
-                    <button onclick="nextQuestion()" class="d-none button-continue"
+                    <button onclick="clickNext()" class="d-none button-continue"
                             style="background-color: #F5F061; padding: 8px 16px; border-radius: 10px; font-size: 25px; height: fit-content; border: none;">
                         Tiếp
                         tục

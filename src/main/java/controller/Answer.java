@@ -24,6 +24,7 @@ public class Answer extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 //        User host = UserService.get
         String key_room = "4h2DHT";
+        req.setAttribute("key", key_room);
         User host = UserService.getInstance().getHost(key_room);
         req.setAttribute("host", host);
         List<User> userList = UserService.getInstance().getUsersInRoom(key_room);
